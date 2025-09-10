@@ -15,6 +15,7 @@
     margin-left: 50px;
 }
 input{
+    cursor: pointer;
     width: 82%;
     height: 50px;
     border-radius: 25px;
@@ -32,6 +33,7 @@ input{
     margin-top: 30px;
     border: 1px solid black;
     border-radius: 20px;
+    background-color: rgba(238, 236, 236, 0.829);
 }
 .task{
     border: 1px solid black;
@@ -42,6 +44,7 @@ input{
     margin: 30px 50px 15px 50px;
     border: 1px solid black;
     border-radius: 20px;
+    background-color: rgba(238, 236, 236, 0.829);
 }
 .content{
     display: flex;
@@ -52,6 +55,7 @@ input{
     border: 1px solid black;
     border-radius: 20px;
     margin-left: 50px;
+    background-color: rgba(238, 236, 236, 0.829);
 }
 .left-column{
     display: flex;
@@ -60,14 +64,16 @@ input{
 .totalDeTarefas{
     width: 50%;
     height: 50%;
-    border: 1px solid black;
+    border: 1px solid rgb(197, 193, 193);
     border-radius: 20px;
     text-align: center;
     margin-left: 140px;
     font-size: 80px;
+    background-color: white;
 }
 .po-tarefas{
-    border: 1px solid black;
+    border: 1px solid rgba(158, 158, 158, 0.877);
+    background-color: whitesmoke;
     border-radius: 20px;
     width: 80%;
     height: 32%;
@@ -76,22 +82,33 @@ input{
 }
 .po-tarefas h3{
    margin-left: 20px;
-   margin-top: 40px;
+   margin-top: 27px;
 }
 .filtros{
     height: 232px;
     margin-top: 20px;
 }
 .filtros span{
+    display: block;
     font-size: 15px;
     margin-left: 10px;
 }
-.filtros input{
-    width: 410px;
+.filtros select{
+    cursor: pointer;
 }
 .consultar button{
     width: 120px;
     height: 45px;
     margin-left: 20px;
-    margin-top: 15px;
+    margin-top: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+#prioridades, #status, #data{
+    width: 300px;
+    height: 40px;
+    border-radius: 15px;
+    margin-left: 40px;
+    margin-top: 10px;
+    display: inline;
 }
