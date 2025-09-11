@@ -1,1 +1,42 @@
+<div class="voltar">
+    <button (click)="voltarParaPaginaPrincipal()">VOLTAR</button>
+</div>
 
+<div class="cont-criar-tarefa">
+
+     <h2 class="tarefa">CRIAR TAREFA</h2>
+     
+  <div class="tarefa-titulo">
+    <h2 style="margin-left: 25px;">Titulo:</h2>
+    <input maxlength="65" style="margin-left: 70px;" type="text" name="" id="" placeholder="Digite o titulo da tarefa">
+  </div>
+
+  <div class="tarefa-descicao">
+    <h2 style="margin-left: 25px;">Descrição</h2>
+    <textarea id="descricao" name="descricao" style="min-width: 50%; max-width: 50%; max-height: 180px; min-height: 180px;" maxlength="500" placeholder="Digite a descrição da tarefa"></textarea>
+  </div>
+
+  <div class="cont-prioridade-data">
+
+    <div class="prioridade">
+        <h2 style="margin-left: 25px;">Prioridade</h2>
+        <select name="" id="">
+            <option value="">Prioridade</option>
+            <option value="baixa">Baixa</option>
+            <option value="media">Média</option>
+            <option value="alta">Alta</option>
+        </select>
+    </div>
+
+    <div class="data">
+        <h2 style="margin-left: 100px;">Data</h2>
+        <input type="date" name="" id="">
+    </div>
+
+    <div class="botao-criar-tarefa">
+        <button type="button">CRIAR TAREFA</button>
+    </div>
+
+  </div>
+
+</div>
