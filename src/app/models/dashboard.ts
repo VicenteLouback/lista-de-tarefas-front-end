@@ -6,5 +6,5 @@ export interface Dashboard {
     descricao: string;
     data: Date;
     prioridade: 'BAIXA' | 'MEDIA' | 'ALTA';
-    status: 'PENDENTE' | 'EM_ANDAMENTO' | 'CONCLUIDA';
+    status: 'PENDENTE' | 'EM ANDAMENTO' | 'CONCLUIDA';
  }

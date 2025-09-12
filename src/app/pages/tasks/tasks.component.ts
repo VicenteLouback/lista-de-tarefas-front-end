@@ -1,35 +1,39 @@
 import { Component, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Tarefas } from '../../models/dashboard';
+import { FormsModule } from '@angular/forms';
+import { TarefaService } from '../../service/tarefa.service';
 
 @Component({
   selector: 'app-tasks',
-  imports: [],
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.scss'
 })
-@Injectable({
-  providedIn: 'root'
-})
-export class TasksComponent {
 
-  constructor(private router: Router){}
+export class TasksComponent {
+  titulo: string = '';
+  descricao: string = '';
+  prioridade: 'BAIXA' | 'MEDIA' | 'ALTA' = 'BAIXA';
+  data: string = '';
+
+  constructor(private router: Router, private tarefaService: TarefaService){}
 
   voltarParaPaginaPrincipal(){
     this.router.navigate(['/home']);
   }
 
-  private tarefas: Tarefas[] = [];
+  criarTarefa() {
+    const novaTarefa: Tarefas = {
+      titulo: this.titulo,
+      descricao: this.descricao,
+      prioridade: this.prioridade,
+      status: 'EM ANDAMENTO',
+      data: new Date(this.data)
+    };
 
-  adicionarTarefa(tarefa: Tarefas){
-    this.tarefas.push(tarefa);
-  }
-
-  listarTarefas(): Tarefas[]{
-    return [...this.tarefas];
-  }
-  
-  limparTarefas() {
-    this.tarefas = [];
+    this.tarefaService.adicionarTarefa(novaTarefa);
+    this.router.navigate(['/home']);
   }
 }
