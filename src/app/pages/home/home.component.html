@@ -1,6 +1,7 @@
 <div class="addTarefas">
     <button  (click)="navegarParaCriarTarefa()" class="button">+ CRIAR</button>
     <input type="text" name="addTarefas" id="addTarefas" placeholder="PESQUISAR TAREFAS"/>
+    <button class="botao-pesquisa">PESQUISAR</button>
 </div>
 
 <div class="content">
@@ -20,41 +21,47 @@
                 </div>
         </div>
 
-       <div class="cont-filtro">
-    <div class="filtros">
-        <span><strong>Prioridades:</strong></span>
-        <select name="prioridades" id="prioridades">
-            <option value="">Todas</option>
-            <option value="alta">Alta</option>
-            <option value="media">Média</option>
-            <option value="baixa">Baixa</option>
-        </select>
-        <span><strong>Status:</strong></span>
-        <select name="status" id="status">
-            <option value="">Todos</option>
-            <option value="pendente">Pendente</option>
-            <option value="em_andamento">Em Andamento</option>
-            <option value="concluido">Concluído</option>
-        </select>
-        <span><strong>Data:</strong></span>
-        <input type="date" name="data" id="data">
+    <div class="cont-filtro">
+       <div class="filtros">
+           <span><strong>Prioridades:</strong></span>
+           <select name="prioridades" id="prioridades">
+               <option value="">Todas</option>
+               <option value="alta">Alta</option>
+               <option value="media">Média</option>
+               <option value="baixa">Baixa</option>
+           </select>
+           <span><strong>Status:</strong></span>
+           <select name="status" id="status">
+               <option value="">Todos</option>
+               <option value="pendente">Pendente</option>
+               <option value="em_andamento">Em Andamento</option>
+               <option value="concluido">Concluído</option>
+           </select>
+           <span><strong>Data:</strong></span>
+           <input type="date" name="data" id="data">
 
-        <div class="consultar">
-            <button type="button">Consultar</button>
-        </div>
+           <div class="consultar">
+              <button type="button">Consultar</button>
+           </div>
+       </div>
     </div>
-</div>
 
     </div>
 
     
     <div class="cont-tarefas"> 
-       <div *ngFor="let tarefa of tarefas" class="tarefa-item">
+       <div *ngFor="let tarefa of tarefas" class="tarefa-item" [ngStyle]="getCorPorPrioridade(tarefa.prioridade)">
+        <div class="cont-titulo">
             <h3>{{tarefa.titulo}}</h3>
-            <p>{{tarefa.descricao}}</p>
-            <p>Prioridade: {{tarefa.prioridade}}</p>
-            <p>Status: {{tarefa.status}}</p>
-            <p>Data: {{tarefa.data | date:'dd/MM/yyyy'}}</p>
+            <button>EDITAR</button>
+        </div>
+            <div class="cont-descricao">
+                <p>{{tarefa.descricao}}</p>
+            </div>
+              <div class="cont-detalhes">
+                  <p>Data: {{tarefa.data | date:'dd/MM/yyyy'}}</p>
+                  <p>Prioridade: {{tarefa.prioridade}}</p>
+              </div>
        </div>
     </div>
 

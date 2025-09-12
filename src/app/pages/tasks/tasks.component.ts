@@ -1,7 +1,7 @@
-import { Component, Injectable } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Tarefas } from '../../models/dashboard';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, Validators } from '@angular/forms';
 import { TarefaService } from '../../service/tarefa.service';
 
 @Component({
@@ -21,16 +21,24 @@ export class TasksComponent {
   constructor(private router: Router, private tarefaService: TarefaService){}
 
   voltarParaPaginaPrincipal(){
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
 
   criarTarefa() {
+    
+    const partesDaData = this.data.split('-');
+    const ano = parseInt(partesDaData[0], 10);
+    const mes = parseInt(partesDaData[1], 10) - 1; // O mês em JavaScript é base 0
+    const dia = parseInt(partesDaData[2], 10);
+
+    const dataCorrigida = new Date(ano, mes, dia);
+    
     const novaTarefa: Tarefas = {
       titulo: this.titulo,
       descricao: this.descricao,
       prioridade: this.prioridade,
       status: 'EM ANDAMENTO',
-      data: new Date(this.data)
+      data: dataCorrigida
     };
 
     this.tarefaService.adicionarTarefa(novaTarefa);

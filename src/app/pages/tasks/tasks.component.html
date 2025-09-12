@@ -7,7 +7,7 @@
 
   <div class="tarefa-titulo">
     <h2 style="margin-left: 25px;">Titulo:</h2>
-    <input [(ngModel)]="titulo" maxlength="65" style="margin-left: 70px;" type="text" placeholder="Digite o titulo da tarefa">
+    <input [(ngModel)]="titulo" maxlength="65" style="margin-left: 70px;" type="text" placeholder="Digite o titulo da tarefa" [required]="true">
   </div>
 
   <div class="tarefa-descicao">
@@ -27,11 +27,11 @@
 
     <div class="data">
       <h2 style="margin-left: 100px;">Data</h2>
-      <input [(ngModel)]="data" type="date">
+      <input [(ngModel)]="data" name="data" type="date" type="date" required>
     </div>
 
     <div class="botao-criar-tarefa">
       <button type="button" (click)="criarTarefa()">CRIAR TAREFA</button>
     </div>
-  </div>
+  </div>A
 </div>
