@@ -165,10 +165,6 @@ input{
   justify-content: space-between;
   align-items: center;
 }
-.cont-titulo button{
-    margin-right: 8px;
-    color: black;
-}
 .cont-titulo h3 {
   margin: 0;
   font-size: 1.5em;
@@ -195,6 +191,16 @@ input{
   border: none;
   padding: 8px 12px;
   border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.editar{
+  background-color: white;
+  color: #2e8b57;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-left: 280px;
   cursor: pointer;
 }
 .cont-tarefas {

@@ -20,6 +20,7 @@ export class HomeComponent {
 
   ngOnInit(){
     this.tarefas = this.tarefaService.listaTarefa();
+    this.tarefaService.tarefa$.subscribe(t => this.tarefas = t);
   }
 
   navegarParaCriarTarefa(){
@@ -57,4 +58,7 @@ export class HomeComponent {
     }
   }
   
+  deletarTarefa(index: number){
+     this.tarefaService.deletarTarefa(index);
+  }
 }
