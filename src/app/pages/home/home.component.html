@@ -50,18 +50,20 @@
 
     
     <div class="cont-tarefas"> 
-       <div *ngFor="let tarefa of tarefas; let i = index" class="tarefa-item" [ngStyle]="getCorPorPrioridade(tarefa.prioridade)">
+       <div *ngFor="let tarefa of tarefas" class="tarefa-item" [ngStyle]="getCorPorPrioridade(tarefa.prioridade)">
         <div class="cont-titulo">
             <h3>{{tarefa.titulo}}</h3>
             <button class="editar">EDITAR</button>
-            <button (click)="deletarTarefa(i)">Excluir</button>
+            
         </div>
             <div class="cont-descricao">
                 <p>{{tarefa.descricao}}</p>
             </div>
               <div class="cont-detalhes">
                   <p>Data: {{tarefa.data | date:'dd/MM/yyyy'}}</p>
-                  <p>Prioridade: {{tarefa.prioridade}}</p>
+                  <p style="margin-left: 180px;">Prioridade: {{tarefa.prioridade}}</p>
+                  <button style="margin-left: 260px;" (click)="deletarTarefa(tarefa.id)">Excluir</button>
+                  <button (click)="concluirTarefa(tarefa.id)">Concluir</button>
               </div>
        </div>
     </div>

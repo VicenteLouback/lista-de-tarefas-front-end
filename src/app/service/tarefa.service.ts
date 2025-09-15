@@ -11,8 +11,14 @@ export class TarefaService {
 
   tarefa$ = this.tarefasSubject.asObservable();
 
-  adicionarTarefa(tarefa: Tarefas){
-    this.tarefas.push(tarefa);
+  private idCounter = 1;
+
+  adicionarTarefa(tarefa: Omit<Tarefas, 'id'>){
+    const novaTarefa: Tarefas = {
+      ...tarefa,
+      id: this.idCounter++
+    };
+    this.tarefas.push(novaTarefa);
     this.tarefasSubject.next(this.tarefas);
   }
   
@@ -22,11 +28,24 @@ export class TarefaService {
 
   limparTarefas(){
     this.tarefas = [];
-    this.tarefasSubject.next(this.tarefas);
+    this.tarefasSubject.next([...this.tarefas]);
   }
 
-    deletarTarefa(index: number){
-     this.tarefas.splice(index, 1);
-     this.tarefasSubject.next(this.tarefas);
+   deletarTarefa(id: number){
+    this.tarefas = this.tarefas.filter(t => t.id !== id);
+    this.tarefasSubject.next([...this.tarefas]);
   }
-} 
+
+  concluirTarefa(id: number){
+    const tarefa = this.tarefas.find(t => t.id === id);
+    if (tarefa) {
+      tarefa.status = 'CONCLUIDA';
+      this.tarefasSubject.next([...this.tarefas]);
+    }
+  }
+  getTarefasConcluidas(): number {
+  return this.tarefas.filter(t => t.status === 'CONCLUIDA').length;
+}
+
+}
+

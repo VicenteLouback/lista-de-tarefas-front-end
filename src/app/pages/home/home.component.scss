@@ -180,9 +180,10 @@ input{
 .cont-detalhes {
   /* Alinhar data e prioridade */
   display: flex;
-  justify-content: space-between;
+  //justify-content: space-between;
+  margin-left: 30px;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 18px;
   font-weight: bold;
 }
 .tarefa-item button {

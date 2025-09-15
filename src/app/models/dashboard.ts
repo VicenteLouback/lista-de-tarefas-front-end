@@ -2,6 +2,7 @@ export interface Dashboard {
 }
 
  export interface Tarefas{
+    id: number;
     titulo: string;
     descricao: string;
     data: Date;

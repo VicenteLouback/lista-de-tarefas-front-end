@@ -34,7 +34,7 @@ export class HomeComponent {
   }
 
   get concluidas():number{
-    return this.tarefas.filter(t => t.status === 'CONCLUIDA').length;
+    return this.tarefaService.getTarefasConcluidas();
   }
 
   get pendentes():number{
@@ -44,7 +44,7 @@ export class HomeComponent {
   get emAndamento(): number {
     return this.tarefas.filter(t => t.status === 'EM ANDAMENTO').length;
   }
-  
+
   getCorPorPrioridade(prioridade: string): any{
     switch(prioridade.toLowerCase()) {
       case 'baixa':
@@ -58,7 +58,11 @@ export class HomeComponent {
     }
   }
   
-  deletarTarefa(index: number){
-     this.tarefaService.deletarTarefa(index);
+  deletarTarefa(id: number){
+     this.tarefaService.deletarTarefa(id);
+  }
+
+  concluirTarefa(id: number){
+    this.tarefaService.concluirTarefa(id);
   }
 }
