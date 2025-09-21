@@ -43,6 +43,7 @@ input{
     border-radius: 20px;
     flex-direction: column;
     overflow-y: auto;
+    
 
 }
 .cont-tarefas {
@@ -158,6 +159,7 @@ input{
   margin-bottom: 20px;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex-direction: column; /* itens empilhados */
 }
 .cont-titulo {
   /* Alinhar o título e o botão na mesma linha */
@@ -176,14 +178,29 @@ input{
   height: 135px; /* Define uma altura mínima, garantindo que não fique muito pequena */
   border-radius: 5px;
   margin-top: 15px;
+  word-wrap: break-word;   /* Quebra palavras grandes */
+  overflow-wrap: break-word; /* Melhor suporte moderno */
+  white-space: normal;     /* Permite quebrar linha */
+  max-width: 100%;         /* Garante que não passe do container */
 }
 .cont-detalhes {
   /* Alinhar data e prioridade */
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
   align-items: center;
+  justify-content: space-between; /* Data à esquerda, Prioridade à direita */
+  flex-wrap: wrap; /* evita quebrar layout em telas pequenas */
+  margin-top: auto; /* força ficar no final */
   margin-top: 15px;
   font-weight: bold;
+  margin-left: 10px;
+}
+.cont-detalhes p{
+  margin-left: 50px;
+}
+.cont-button{
+  display: block;
+  margin-right: 20px;
+  margin-left: 250px;
 }
 .tarefa-item button {
   background-color: white;
