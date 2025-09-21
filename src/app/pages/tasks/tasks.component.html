@@ -6,13 +6,13 @@
   <h2 class="tarefa">CRIAR TAREFA</h2>
 
   <div class="tarefa-titulo">
-    <h2 style="margin-left: 25px;">Titulo:</h2>
+    <h2 style="margin-left: 25px;">Titulo</h2>
     <input [(ngModel)]="titulo" maxlength="65" style="margin-left: 70px;" type="text" placeholder="Digite o titulo da tarefa" [required]="true">
   </div>
 
   <div class="tarefa-descicao">
     <h2 style="margin-left: 25px;">Descrição</h2>
-    <textarea [(ngModel)]="descricao" style="min-width: 50%; max-width: 50%; max-height: 180px; min-height: 180px;" maxlength="500" placeholder="Digite a descrição da tarefa"></textarea>
+    <textarea [(ngModel)]="descricao" style="min-width: 50%; max-width: 85%; max-height: 180px; min-height: 180px;" maxlength="750" placeholder="Digite a descrição da tarefa"></textarea>
   </div>
 
   <div class="cont-prioridade-data">
@@ -26,7 +26,7 @@
     </div>
 
     <div class="data">
-      <h2 style="margin-left: 100px;">Data</h2>
+      <h2 style="margin-left: 25px;">Data</h2>
       <input [(ngModel)]="data" name="data" type="date" type="date" required>
     </div>
 

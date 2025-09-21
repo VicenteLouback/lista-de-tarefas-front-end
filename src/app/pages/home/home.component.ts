@@ -4,11 +4,12 @@ import { Tarefas } from '../../models/dashboard';
 import { DatePipe, NgForOf } from '@angular/common';
 import { TarefaService } from '../../service/tarefa.service';
 import { NgStyle } from '@angular/common';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common'; 
 
 @Component({
   selector: 'app-home',
-  imports: [NgForOf, DatePipe, NgStyle, FormsModule],
+  imports: [NgForOf, DatePipe, NgStyle, FormsModule, NgIf],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -60,5 +61,30 @@ export class HomeComponent {
   
   deletarTarefa(index: number){
      this.tarefaService.deletarTarefa(index);
+  }
+
+  concluirTarefa(index: number){
+    this.tarefaService.concluirTarefa(index);
+  }
+
+  getEstiloTarefa(tarefa: any){
+    const estilo: any = {};
+
+  // Define a borda pelo status
+  if (tarefa.status === 'CONCLUIDA') {
+    estilo.border = '5px dotted gray';
+    estilo.opacity = '0.8';
+  } else {
+    estilo.border = '2px solid #000';
+    estilo.opacity = '1';
+  }
+
+  // Adiciona estilo por prioridade
+  const estiloPrioridade = this.getCorPorPrioridade(tarefa.prioridade);
+      return {...estiloPrioridade, ...estilo};
+  }
+
+  refazerTarefa(index: number){
+    this.tarefaService.refazerTarefa(index);
   }
 }

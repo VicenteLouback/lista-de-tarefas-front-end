@@ -29,4 +29,14 @@ export class TarefaService {
      this.tarefas.splice(index, 1);
      this.tarefasSubject.next(this.tarefas);
   }
+
+  concluirTarefa(index: number){
+    this.tarefas[index].status = 'CONCLUIDA';
+    this.tarefasSubject.next(this.tarefas)
+  }
+
+  refazerTarefa(index: number){
+    this.tarefas[index].status = 'EM ANDAMENTO';
+    this.tarefasSubject.next(this.tarefas);
+  }
 } 

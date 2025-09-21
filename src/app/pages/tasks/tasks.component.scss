@@ -9,9 +9,10 @@
     background-color: white;
 }
 .cont-criar-tarefa{
-    width: 70%;
-    margin-top: 90px;
-    margin-left: 260px;
+    width: 40%;
+    height: 780px;
+    margin-top: 40px;
+    margin-left: 540px;
     border: 1px solid black;
     border-radius: 20px;
     background-color:  rgba(238, 236, 236, 0.829);
@@ -20,14 +21,14 @@
     width: 40%;
     padding: 20px;
     margin-top: 12px;
-    margin-left: 380px;
+    margin-left: 210px;
     text-align: center;
     border-radius: 15px;
     border: 1px solid black;
     background-color: rgba(243, 243, 243, 0.877);
 }
 .tarefa-titulo{
-    display: flex;
+    display: block;
     align-items: center;   /* alinha verticalmente */
     gap: 16px; 
 }
@@ -36,28 +37,24 @@
     align-items: center; /* alinha na vertical */
     gap: 10px;
 }
-.tarefa-titulo label {
-  font-weight: bold;
-  margin: 0;
-  width: 140px;
-}
 .tarefa-titulo input{
-    width: 40%;
+    width: 80%;
     height: 40px;
     border-radius: 20px;
-    margin-top: 0px;
+    margin-top: -10px;
 }
 .tarefa-descicao textarea{
-    width: 80%;
+    width: 90%;
     height: 340px;
     border-radius: 10px;
     margin-left: 40px;
 }
 .cont-prioridade-data{
-    display: flex;
+    display: block;
 }
 .prioridade select{
     cursor: pointer;
+    margin-top: -10px;
     margin-left: 80px;
     border-radius: 20px;
     width: 400px;
@@ -65,7 +62,8 @@
 }
 .data input{
     cursor: pointer;
-    margin-left: 140px;
+    margin-top: -10px;
+    margin-left: 80px;
     margin-bottom: 30px;
     border-radius: 20px;
     width: 400px;
@@ -73,9 +71,8 @@
 }
 .botao-criar-tarefa button{
     cursor: pointer;
-    margin-top: 67px;
-    margin-left: 100px;
-    width: 150px;
+    margin-left: 190px;
+    width: 350px;
     height: 40px;
     border-radius: 20px;
     border: 1px solid black;
