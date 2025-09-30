@@ -203,7 +203,7 @@ input{
   margin-left: 250px;
 }
 .tarefa-item button {
-  background-color: white;
+
   color: #2e8b57;
   border: none;
   padding: 8px 12px;
@@ -224,4 +224,22 @@ input{
   display: flex;
   flex-direction: column; /* Isso faz com que os itens fiquem um abaixo do outro */
   gap: 10px; /* Adiciona um espaço entre os cartões */
+}
+.fa-trash{
+  color: red;
+  width: 40px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.fa-check-circle{
+  color: rgb(0, 255, 0);
+  width: 40px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.fa-rotate-left{
+  color: rgb(251, 255, 39);
+  width: 40px;
+  font-size: 30px;
+  cursor: pointer;
 }

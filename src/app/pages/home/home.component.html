@@ -61,9 +61,9 @@
               <div class="cont-detalhes">
                   <p style="margin-left: 10px;">Data: {{tarefa.data | date:'dd/MM/yyyy'}}</p>
                   <p style="margin-left: 83px;">Prioridade: {{tarefa.prioridade}}</p>
-                    <button style="margin-left: 195px;" (click)="deletarTarefa(i)">Excluir</button>
-                    <button  (click)="refazerTarefa(i)">Refazer</button>
-                    <button style="margin-left: 10px;" (click)="concluirTarefa(i)">Concluir</button>
+                    <i style="margin-left: 240px;" (click)="deletarTarefa(i)" class="fa fa-trash" aria-hidden="true"></i>
+                    <i style="margin-left: 30px;" (click)="refazerTarefa(i)" class="fas fa-rotate-left"></i>
+                    <i style="margin-left: 30px;" (click)="concluirTarefa(i)" class="fa fa-check-circle" aria-hidden="true"></i>
               </div>
        </div>
     </div>
